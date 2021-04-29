@@ -63,9 +63,9 @@ int main(int argc, const char **argv)
     std::cout << "Start y (0.0 ~ 100.0): "; 
     std::cin >> sy;
     std::cout << "End x (0.0 ~ 100.0): "; 
-    std::cin >> sx;
+    std::cin >> ex;
     std::cout << "End y (0.0 ~ 100.0): "; 
-    std::cin >> sy;
+    std::cin >> ey;
 
 
     // Build Model.
