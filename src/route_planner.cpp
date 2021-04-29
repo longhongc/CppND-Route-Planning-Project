@@ -34,13 +34,10 @@ void RoutePlanner::AddNeighbors(RouteModel::Node *current_node) {
 
 
 
-bool IsGreater(RouteModel::Node * n1, RouteModel::Node * n2){
-    return n1->h_value + n1->g_value > n2->h_value + n2->g_value; 
-}
 RouteModel::Node *RoutePlanner::NextNode() {
-    //bool IsGreater = [](RouteModel::Node * n1, RouteModel::Node * n2){
-    //    return (n1->h_value + n1->g_value) > (n2->h_value + n2->g_value); 
-    //}; 
+    auto IsGreater = [](const RouteModel::Node * n1, const RouteModel::Node * n2){
+        return n1->h_value + n1->g_value > n2->h_value + n2->g_value;
+    };  
     std::sort(open_list.begin(), open_list.end(), IsGreater); 
     auto next = open_list.back(); 
     open_list.pop_back(); 
